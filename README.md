@@ -16,7 +16,7 @@ GitHub_Update.update # 退出游戏，更新后重新打开游戏
 ## 范例
 [范例地址](https://github.com/gxm11/project1/releases)，请下载v0.2版本，跟NPC对话后就会升级到v0.3版本。
 
-## 使用方法（GayHub老司机）
+## 使用方法（GitHub老司机）
 1. 复制整个Update文件夹，并把update.rb加入脚本编辑器
 2. 修改脚本里面的内容：
 ```ruby
@@ -26,7 +26,7 @@ module GitHub_Update
   Version = "当前的版本"
 end
 ```
-3. 制作一个发行版，**tag的名字要跟第3步里设置的一致**
+3. 制作一个发行版，**tag的名字要跟第2步里设置的一致**
 
 ## 使用Github客户端来发布
 接下来用Github客户端来演示，下载地址：https://desktop.github.com/
@@ -55,7 +55,7 @@ end
 
 ![发布工程](img/12.png)
 
-6. 注意去掉 keep private，并且这个Name就是**你的游戏仓库名**，不要使用奇怪的名字，就字母数字这些
+6. 注意去掉 keep private，并且这个Name就是**你的仓库名**，不要使用奇怪的名字，就字母数字这些
 
 ![发布工程2](img/6.png)
 
@@ -71,7 +71,7 @@ end
 
 ![发布](img/9.png)
 
-10. 注意这里的tag name（图中是v0.1）要和脚本中的Version完全一致！当你下一次更新的时候，就要换另一个版本号。
+10. 注意这里的tag name（图中是v0.1）要和脚本中的Version完全一致！当你下一次更新的时候，就要换另一个版本号。版本号最好是`v`开头
 
 ![新的Release](img/10.png)
 
@@ -83,7 +83,7 @@ end
 ```ruby
 module GitHub_Update
   Owner = "你的github账号"
-  Repo = "你的游戏仓库名"
+  Repo = "你的仓库名"
   Version = "当前的版本"
 end
 ```
