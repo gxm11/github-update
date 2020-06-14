@@ -57,6 +57,3 @@ module GitHub_Update
     return cmd.gsub("__OLD__", @old_tag).gsub("__NEW__", @new_tag)
   end
 end
-
-puts GitHub_Update::Release_Url
-puts GitHub_Update.version
