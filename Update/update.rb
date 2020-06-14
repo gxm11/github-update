@@ -7,9 +7,9 @@
 require "win32api" if not defined? Win32API
 
 module GitHub_Update
-  Owner = "gxm11"
-  Repo = "project1"
-  Version = "v0.2"
+  Owner = "你的Github用户名"
+  Repo = "你的仓库名"
+  Version = "版本号（v开头）"
 end
 
 module GitHub_Update
