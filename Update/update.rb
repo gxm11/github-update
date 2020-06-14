@@ -4,10 +4,12 @@
 # ------------------------------------------------------------------------------
 # Author: guoxiaomi
 # ==============================================================================
+require "win32api" if not defined? Win32API
+
 module GitHub_Update
-  Owner = "你的github账号"
-  Repo = "你的游戏仓库名"
-  Version = "当前的版本"
+  Owner = "gxm11"
+  Repo = "project1"
+  Version = "v0.2"
 end
 
 module GitHub_Update
@@ -29,9 +31,8 @@ module GitHub_Update
     @old_tag = Version
     begin
       URLDownloadToFile.call(0, Release_Url, Release_Path, 0, 0)
-      @new_tag = File.read(Release_Path).scan(
-        /"tag_name":\s*"(.+?)"/
-      )[0][0]
+      ret = File.read(Release_Path).force_encoding("utf-8")
+      @new_tag = ret.scan(/"tag_name":\s*"(.+?)"/)[0][0]
     rescue
       @new_tag = @old_tag
     end
@@ -56,3 +57,6 @@ module GitHub_Update
     return cmd.gsub("__OLD__", @old_tag).gsub("__NEW__", @new_tag)
   end
 end
+
+puts GitHub_Update::Release_Url
+puts GitHub_Update.version
